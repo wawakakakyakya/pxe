@@ -1,0 +1,28 @@
+dhcp:
+  listen: 0.0.0.0
+  enabled: true
+  port: 30067
+  range: 192.168.1.101 - 192.168.1.200
+  lease_sec: 86400
+  hosts:
+    - name: sample1
+      addr: 192.168.1.1
+      mac: aa:bb:cc:dd:ee:ff
+    - name: sample2
+      addr: 192.168.1.2
+      mac: aa:11:cc:22:ee:33
+  options:
+    subnet: 192.168.1.0/24
+    gateway: 192.168.1.1
+    dns: 192.168.1.1
+    tftp_srv: localhost
+    boot_file: pxelinux.0
+http:
+  enabled: true
+  port: 80
+  use_ssl: false
+  image_path: /opt/images
+tftp:
+  enabled: true
+  port: 69
+  root_dir: /root
